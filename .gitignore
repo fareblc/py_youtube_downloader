@@ -1,3 +1,6 @@
 /venv/
 /output/
 /.idea/
+/__pycache__/
+*.pyo
+*.pyc
