@@ -51,19 +51,6 @@ def get_from_playlist(url):
 
 
 def get_video(url):
-    # obj = pt.YouTube(url)
-    # videos = obj.streams
-
-    # if len(videos) == 0:
-    #     wt.write("No streams available for video with url %s\n" % url)
-    #     return
-
-    # vid = videos.get_by_itag(22) if videos.get_by_itag(22) is not None else videos.first()
-
-    # vid_title = sanitize_filename(vid.title)
-
-    # wt.write(str('Downloading %s\n' % str(vid_title)))
-
     ydl_opts = {
         'format': 'best',
         'outtmpl': f'{sd.vid_path}/%(title)s.%(ext)s',
@@ -79,28 +66,8 @@ def get_video(url):
         print(str(vid['title']))
         wt.write('Finished downloading %s\n-----\n' % str(vid['title']))
 
-    # vid.download(filename=vid_title, output_path=sd.vid_path)
-
-    # wt.write('Finished downloading %s\n' % str(vid_title))
-
 
 def get_audio(url):
-    # obj = pt.YouTube(url).streams
-    #
-    # if len(obj) == 0:
-    #     wt.write("No streams available for video with url %s\n" % url)
-    #     return
-    #
-    # audio_track = obj.filter(only_audio=True).first()
-    #
-    # audio_title = sanitize_filename(audio_track.title)
-    #
-    # wt.write(str('Downloading {}\n'.format(str(audio_title))))
-    #
-    # audio_track.download(filename=audio_title, output_path=sd.music_path, get_mp3=True)
-    #
-    # wt.write(str('Finished downloading %s\n' % str(audio_title)))
-
     ydl_opts = {
         'format': 'bestaudio',
         'outtmpl': f'{sd.music_path}/%(title)s.mp3',
@@ -127,20 +94,3 @@ def download_chooser(download_url: str, audio_only=True):
     else:
         callback(download_url)
     wt.write(str('FINISHED!!!\n'))
-
-
-# if __name__ == "__main__":
-#     get_video('https://www.youtube.com/watch?v=Io0fBr1XBUA')
-#     get_audio('https://www.youtube.com/watch?v=Io0fBr1XBUA')
-# download_chooser("https://www.youtube.com/playlist?list=PLynhp4cZEpTbRs_PYISQ8v_uwO0_mDg_X", True)
-# play_list = pt.Playlist("https://www.youtube.com/watch?v=nYh-n7EOtMA&list=PLH0MZrlBewkDYjPMbsVcvhSKdprZZ48IO")
-# play_list._video_regex = re.compile(r"\"url\":\"(/watch\?v=[\w-]*)")
-# play_list2 = get_from_playlist(
-# "https://www.youtube.com/watch?v=nYh-n7EOtMA&list=PLH0MZrlBewkDYjPMbsVcvhSKdprZZ48IO")
-# getPlaylistLinks("https://www.youtube.com/watch?v=nYh-n7EOtMA&list=PLH0MZrlBewkDYjPMbsVcvhSKdprZZ48IO")
-
-# url_list = get_from_playlist(
-# 'https://www.youtube.com/watch?v=Io0fBr1XBUA&list=PLH0MZrlBewkBYSYoQKqMk2MPfI81yeZ1c')
-# print(play_list2)
-# for video in play_list.videos:
-#     print(video)

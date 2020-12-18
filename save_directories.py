@@ -17,7 +17,6 @@ class SaveDirectories(metaclass=Singleton):
         self.music_path = self.main_path + '/Music/'
 
     def get_main_path(self) -> str:
-        # print(wt.read('./save_path.txt'))
         path = wt.read('./save_path.txt')
         if os.path.exists(path):
             return path
