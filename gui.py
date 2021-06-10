@@ -30,6 +30,7 @@ class YoutubeDownloaderGui(object):
         self.pushButton = QtWidgets.QPushButton(self.central_widget)
 
         self.select_dir_button = QtWidgets.QPushButton(self.central_widget)
+
         QApplication.clipboard().dataChanged.connect(self.clipboard_changed)
 
         self.setup_ui()
@@ -159,6 +160,8 @@ class YoutubeDownloaderGui(object):
     def clipboard_changed(self):
         text = QApplication.clipboard().text()
         if text.startswith("https://www.youtube.com"):
+            if text.find('&'):
+                text = text.split('&')[0]
             self.text_output.setText("Copied URL: " + text)
             self.url_edit.setText(text)
             self.check_url()

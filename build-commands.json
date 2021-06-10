@@ -1,0 +1,81 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "C:/Users/Antonis/PycharmProjects/YoutubeDownloader/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "C:/Users/Antonis/PycharmProjects/YoutubeDownloader/app_icon.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "Youtube_DownloaderV3-1"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Antonis/PycharmProjects/YoutubeDownloader/app_img.png;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Antonis/PycharmProjects/YoutubeDownloader/save_path.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Antonis/PycharmProjects/YoutubeDownloader/temp.txt;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
