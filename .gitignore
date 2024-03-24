@@ -2,5 +2,8 @@
 /output/
 /.idea/
 /__pycache__/
+/dist/
+/build/
 *.pyo
 *.pyc
+/Youtube_DownloaderV4.spec
