@@ -1,11 +1,11 @@
-from PyQt5 import QtWidgets, QtGui, QtCore
-from gui import YoutubeDownloaderGui
-from multiprocessing import freeze_support
-from typing import Tuple
+import sys
 import ctypes
 import writer
+from typing import Tuple
+from gui import YoutubeDownloaderGui
 from core.statics import resource_path
-import sys
+from multiprocessing import freeze_support
+from PyQt5 import QtWidgets, QtGui, QtCore
 # from save_directories import SaveDirectories
 
 

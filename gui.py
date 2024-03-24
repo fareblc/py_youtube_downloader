@@ -1,9 +1,9 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from pathlib import Path
 import time
-from multiprocessing import Process
-import downloader_new as dn
 import writer as wt
+from pathlib import Path
+import downloader as dn
+from multiprocessing import Process
+from PyQt5 import QtCore, QtGui, QtWidgets
 from save_directories import SaveDirectories
 from PyQt5.Qt import QApplication, QClipboard
 
@@ -114,7 +114,7 @@ class YoutubeDownloaderGui(object):
     def re_translate_ui(self):
         _translate = QtCore.QCoreApplication.translate
         self.main_window.setWindowTitle(_translate("yt_main_window", "Youtube Downloader"))
-        self.pushButton.setText(_translate("yt_main_window", "Download NOW!!"))
+        self.pushButton.setText(_translate("yt_main_window", "Download Now!!"))
         self.select_dir_button.setText(_translate("yt_main_window", 'Change Folder'))
         self.yt_url_label.setToolTip(
             _translate("yt_main_window", "Paste Youtube video URL on the right"))

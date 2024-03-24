@@ -1,5 +1,5 @@
-from core.statics import resource_path
 import os
+from core.statics import resource_path
 
 
 def write(msg: str, file_name: str = 'temp.txt'):

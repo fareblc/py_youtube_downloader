@@ -1,7 +1,7 @@
-from core.singleton import Singleton
+import os
 import writer as wt
 from pathlib import Path
-import os
+from core.singleton import Singleton
 
 
 class SaveDirectories(metaclass=Singleton):
