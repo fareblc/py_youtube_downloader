@@ -1,10 +1,11 @@
-import writer as wt
-from core.statics import check_if_dirs_exists  # , sanitize_filename
-from save_directories import SaveDirectories
-from bs4 import BeautifulSoup
-import urllib.request as req
 import json
 import youtube_dl
+import writer as wt
+import multiprocessing as mp
+import urllib.request as req
+from bs4 import BeautifulSoup
+from save_directories import SaveDirectories
+from core.statics import check_if_dirs_exists  # , sanitize_filename
 
 sd = SaveDirectories()
 
@@ -55,6 +56,7 @@ def get_video(url):
         'format': 'best',
         'outtmpl': f'{sd.vid_path}/%(title)s.%(ext)s',
         'noplaylist': True,
+        'extractor_retries': 'auto',
         'progress_hooks': [my_hook],
     }
 
@@ -72,6 +74,7 @@ def get_audio(url):
         'format': 'bestaudio',
         'outtmpl': f'{sd.music_path}/%(title)s.mp3',
         'noplaylist': True,
+        'extractor_retries': 'auto',
         'progress_hooks': [my_hook],
     }
 
@@ -89,8 +92,9 @@ def download_chooser(download_url: str, audio_only=True):
     check_if_dirs_exists(main_sp=sd.main_path, video_p=sd.vid_path, music_p=sd.music_path)
     if check_if_playlist(download_url):
         url_list = get_from_playlist(download_url)
-        for url in url_list:
-            callback(url)
+
+        with mp.Pool(mp.cpu_count() // 2) as pool:
+            pool.map(callback, url_list)
     else:
         callback(download_url)
     wt.write(str('FINISHED!!!\n'))

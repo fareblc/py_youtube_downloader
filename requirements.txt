@@ -44,10 +44,9 @@ six==1.16.0
 soupsieve==2.1
 tqdm==4.54.1
 typing-extensions==3.7.4.3
-UNKNOWN==0.0.0
 urllib3==1.26.2
 whichcraft==0.6.1
-youtube-dl==2021.6.6
+youtube-dl==2021.12.17
 zipp==3.4.0
 zope.event==4.5.0
 zope.interface==5.2.0
